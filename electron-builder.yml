@@ -1,0 +1,29 @@
+
+appId: "com.yourcompany.electricitybill"
+productName: "فواتير الكهرباء"
+directories:
+  output: "electron-dist"
+  buildResources: "public"
+files:
+  - "dist/**/*"
+  - "electron/**/*"
+extraResources:
+  - from: "resources"
+    to: "resources"
+win:
+  icon: "public/logo.png"
+  target:
+    - "nsis"
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+mac:
+  category: "public.app-category.utilities"
+  target:
+    - "dmg"
+linux:
+  category: "Utility"
+  target:
+    - "AppImage"
